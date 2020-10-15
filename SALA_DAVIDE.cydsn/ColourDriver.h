@@ -1,12 +1,7 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Header file where the structure of the colour and the function to change it are defined
+ * 
  * ========================================
 */
 
@@ -20,9 +15,9 @@
         uint8_t red;
         uint8_t green;
         uint8_t blue;
-    }colour;
+    }colour; //the colour is defined as a struct of three elements wich are the three duty cycle of the respective colour
     
-    void SetColour(colour c);
+    void SetColour(colour c); //function to set the duty cycles of the PWMs
     
     
     

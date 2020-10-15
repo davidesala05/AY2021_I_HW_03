@@ -1,12 +1,7 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Header file of the ISR
+ * The ISR is called every time the UART acquire a byte
  * ========================================
 */
 
@@ -18,7 +13,8 @@
     #include "ColourDriver.h"
     #include "GlobalVariables.h"
     
-    
+    #define CORRECT_HEADER 0xA0
+    #define CORRECT_TAIL 0xC0
     
     CY_ISR_PROTO(Custom_UART_RX_ISR);
     
