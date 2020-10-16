@@ -8,7 +8,7 @@
     #define __COLOUR_DEFINITION_
     
     #include "ColourDriver.h"
-    colour c = {0,0,0}; //All the duty cycles are initialized to 0 to be all the LEDs OFF
+    colour c = {0,0,0}; 
 
 #endif
 /* [] END OF FILE */

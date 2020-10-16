@@ -15,7 +15,7 @@
         uint8_t red;
         uint8_t green;
         uint8_t blue;
-    }colour; //the colour is defined as a struct of three elements wich are the three duty cycle of the respective colour
+    }colour; //the colour is defined as a struct of three elements wich are the three duty cycles
     
     void SetColour(colour c); //function to set the duty cycles of the PWMs
     

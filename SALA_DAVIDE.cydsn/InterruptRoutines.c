@@ -1,7 +1,7 @@
 /* ========================================
  *
  * Here all the acquisition of the bytes transmitted by the UART are saved in the header, tail and colour variables
- * Moreover, if the transimission is correct, the function to chnage the colour is called
+ * Moreover, if the transimission is correct, the function to change the colour is called
  * 
  * ========================================
 */
@@ -11,7 +11,7 @@
 
 CY_ISR(Custom_UART_RX_ISR) {
     
-    if (UART_ReadRxStatus() == UART_RX_STS_FIFO_NOTEMPTY) { //Control if a byte is acquired
+    if (UART_ReadRxStatus() == UART_RX_STS_FIFO_NOTEMPTY) {
         
         flag_reset_timer = 1; //flag for the reset of the timer --> trasmission within 5 seconds controlled in the main
         if (count == 0){ //first byte --> HEADER or V

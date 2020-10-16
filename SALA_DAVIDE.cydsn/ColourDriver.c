@@ -1,6 +1,6 @@
 /* ========================================
  *
- * Here there is the fuction udes in theInterruprRoutines.c file to change the colour of the RGB led
+ * Here there is the fuction used in the InterruptRoutines.c file to change the colour of the RGB led
  * 
  * ========================================
 */

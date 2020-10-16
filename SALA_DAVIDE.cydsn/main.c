@@ -30,7 +30,7 @@ int main(void)
         if ((Timer_ReadCounter() == 0) && (count != 0)){ //If five seconds are passed the initialization of the UART is done and a message is displayed
             UART_PutString("5 seconds have been passed\n"); //The condition of the count != 0 is useful to not print the message every 5 seconds 
             count = 0;
-            UART_Init(); //initialization of the UART to erase all the register 
+            UART_Init(); //Initialization of the UART to erase all the register 
         }
         if (flag_end_transmission == 1){ //If the trasmission is right and is completed (all 4 bytes have been saved) a message of correct acquisition is displayed 
             UART_PutString("All the four bytes have been aquired\n");
