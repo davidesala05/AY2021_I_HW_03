@@ -27,18 +27,19 @@ int main(void)
             Timer_WriteCounter(500);
             flag_reset_timer = 0;
         }
-        if ((Timer_ReadCounter() == 0) && (count != 0)){ //If five seconds are passed the initialization of the UART is done and a message is displayed
+        if ((Timer_ReadCounter() == 0) && (count != 0)){ //If five seconds are passed, the initialization of the UART is done and a message is displayed
             UART_PutString("5 seconds have been passed\n"); //The condition of the count != 0 is useful to not print the message every 5 seconds 
             count = 0;
             UART_Init(); //Initialization of the UART to erase all the register 
         }
         if (flag_end_transmission == 1){ //If the trasmission is right and is completed (all 4 bytes have been saved) a message of correct acquisition is displayed 
+            SetColour(c); //The new colour is saved
             UART_PutString("All the four bytes have been aquired\n");
             count = 0;
             flag_end_transmission = 0;
         }
         if (flag_v == 1){ //If the "v" character is write, the predefined string is passed
-            UART_PutString("RGB LED Program $$$\n");
+            UART_PutString("RGB LED Program $$$");
             flag_v = 0;
             count = 0;
         }

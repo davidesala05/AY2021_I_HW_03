@@ -6,7 +6,6 @@
  * ========================================
 */
 #include "InterruptRoutines.h"
-#include "ColourDefinition.h"
 
 
 CY_ISR(Custom_UART_RX_ISR) {
@@ -43,8 +42,7 @@ CY_ISR(Custom_UART_RX_ISR) {
                 flag_error = 1;
             }
             if (flag_error == 0){ //If all the values are correct
-                flag_end_transmission = 1;
-                SetColour(c); //The new colour is saved
+                flag_end_transmission = 1; // Flag used in the main to set the new parameters of the colour
             }
         }
         
