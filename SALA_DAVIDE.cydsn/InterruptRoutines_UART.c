@@ -1,19 +1,20 @@
 /* ========================================
  *
- * Here all the acquisition of the bytes transmitted by the UART are saved in the header, tail and colour variables
- * Moreover, if the transimission is correct, the function to change the colour is called
+ * Here all the acquisition of the bytes transmitted by the UART are saved in the header, tail and colour variables.
+ * Moreover, the control of errors and character "v" is done.
+ * If no errors are found, a flag of end transmission is set
  * 
  * ========================================
 */
-#include "InterruptRoutines.h"
+#include "InterruptRoutines_UART.h"
 
 
 CY_ISR(Custom_UART_RX_ISR) {
     
     if (UART_ReadRxStatus() == UART_RX_STS_FIFO_NOTEMPTY) {
-        
-        flag_reset_timer = 1; //flag for the reset of the timer --> trasmission within 5 seconds controlled in the main
-        
+       
+        Timer_Start(); //The timer is initialized and started
+
         switch (count){
         
             case 0 :  //first byte --> HEADER or V

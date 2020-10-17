@@ -1,12 +1,13 @@
 /* ========================================
  *
- * Header file of the ISR
- * The ISR is called every time the UART acquire a byte
+ * Header file of the ISR of the UART
+ * The ISR is called every time the UART acquires a byte
+ * 
  * ========================================
 */
 
-#ifndef __INTERRUPT_ROUTINE_
-    #define __INTERRUPT_ROUTINE_
+#ifndef __INTERRUPT_ROUTINE_UART_
+    #define __INTERRUPT_ROUTINE_UART_
     
     #include "cytypes.h"
     #include "project.h"
