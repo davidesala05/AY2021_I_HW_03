@@ -21,7 +21,5 @@
     
     void SetColour(colour c); //function to set the duty cycles of the PWMs
     
-    
-    
 #endif
 /* [] END OF FILE */
