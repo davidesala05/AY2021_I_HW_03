@@ -49,7 +49,7 @@ CY_ISR(Custom_UART_RX_ISR) {
                 if (tail != CORRECT_TAIL){ //If the tail is not the correct one
                     flag_error = 1;
                 }
-                if (flag_error == 0){ //If all the values are correct
+                else if (flag_error == 0){ //If all the values are correct
                     flag_end_transmission = 1; // Flag used in the main to set the new parameters of the colour
                 }
                 break;

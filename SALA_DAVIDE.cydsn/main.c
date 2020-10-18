@@ -25,13 +25,13 @@ int main(void)
     {
         if (flag_end_transmission == 1){ //If the trasmission is right and is completed (all 4 bytes have been saved) a message of correct acquisition is displayed 
             SetColour(c); //The new colour is saved
-            UART_PutString("All the four bytes have been aquired\n");
+            UART_PutString("End of the transmission, new colour is set\r\n");
             Timer_Stop();
             count = 0;
             flag_end_transmission = 0;
         }
         else if (flag_5_sec == 1){ //If 5 seconds are passed from the last byte acquisition 
-            UART_PutString("5 seconds have been passed\n");
+            UART_PutString("TOO LATE!, restart\r\n");
             UART_Init(); //Initialization of the UART to erase all the register     
             Timer_Stop(); //The timer is stopped to not call any isr of the timer if the trasmission does not occur
             count = 0;
@@ -45,7 +45,7 @@ int main(void)
             flag_v = 0;
         }
         else if (flag_error == 1){ //If an error in the trasmission (not correct header or tail) occur a message is displayed
-            UART_PutString("ERROR in the transmission\n");
+            UART_PutString("ERROR in the transmission\r\n");
             UART_Init();
             Timer_Stop();
             count = 0;
