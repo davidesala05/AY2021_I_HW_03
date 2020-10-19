@@ -13,6 +13,7 @@ CY_ISR(Custom_UART_RX_ISR) {
     if (UART_ReadRxStatus() == UART_RX_STS_FIFO_NOTEMPTY) {
        
         Timer_Start(); //The timer is initialized and started
+        Timer_WriteCounter(500); //The counter register of the timer is reset to the initial period
 
         switch (count){
         
